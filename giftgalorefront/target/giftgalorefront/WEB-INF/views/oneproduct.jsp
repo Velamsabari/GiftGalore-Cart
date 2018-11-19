@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <style>
 @import
 	url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css)
@@ -160,17 +161,25 @@ transform
 					</div>
 				</article>
 			</aside>
+			<c:if test="${prod.quantity != 0}">
 			<aside class="col-sm-3">
-				<div class="param param-inline" style="padding-top: 25%;">
-					<span class="price-title">Quantity: </span> <input type="text"
-						class="form-control form-control-sm" style="width: 70px;">
-				</div>
-				<div class="row" style="padding-top: 25%;">
-					<button class="btn btn-lg color-box-waanbii" type="button">
-						<i class="fa fa-shopping-cart"></i> Add to Cart
-					</button>
+				<div class="row" style="padding-top: 50%;">
+					<a href="addToCart?pid=${prod.product_id}"
+						class="btn btn-lg color-box-waanbii" type="button"> <i
+						class="fa fa-shopping-cart"></i> Add to Cart
+					</a>
 				</div>
 			</aside>
+			</c:if>
+			<c:if test="${prod.quantity == 0}">
+			<aside class="col-sm-3">
+				<div class="row" style="padding-top: 50%;">
+					<a href=""
+						class="btn btn-lg color-box-waanbii" type="button">  Out of Stock
+					</a>
+				</div>
+			</aside>
+			</c:if>
 		</div>
 	</div>
 </div>

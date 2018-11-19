@@ -54,6 +54,20 @@
 		<c:if test="${oneproductpage}">
 			<c:import url="oneproduct.jsp" />
 		</c:if>
+		
+		<c:if test="${cartpage}">
+			<c:import url="cart.jsp" />
+		</c:if>
+		
+		<c:if test="${addresspage}">
+			<c:import url="Address.jsp" />
+		</c:if>
+		<c:if test="${orderpage}">
+			<c:import url="Order.jsp" />
+		</c:if>
+		<c:if test="${billpage}">
+			<c:import url="Invoice.jsp" />
+		</c:if>
 	</div>
 	<c:import url="Footer.jsp" />
 

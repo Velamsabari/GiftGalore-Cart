@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.giftgalore.giftgalorebackend.DALayer.CategoryDAO;
 import com.giftgalore.giftgalorebackend.DALayer.ProductDAO;
-import com.giftgalore.giftgalorebackend.model.Product;
+import com.giftgalore.giftgalorebackend.model.MyProduct;
 
 
 
@@ -62,7 +62,7 @@ public class ProductController {
 		m.addAttribute("title", "GiftGalore-Product");
 		m.addAttribute("catlist", catagorydao.ViewAllCategory());
 		m.addAttribute("prodlist", productdao.SelectAllProduct());
-		m.addAttribute("Product", new Product());
+		m.addAttribute("Product", new MyProduct());
 		m.addAttribute("edit", false);
 		return "index";
 
@@ -79,7 +79,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("/admin/addproduct")
-	public String addproduct(@Valid @ModelAttribute("Product") Product product, BindingResult BR, Model m) {
+	public String addproduct(@Valid @ModelAttribute("Product") MyProduct product, BindingResult BR, Model m) {
 		if (BR.hasErrors()) {
 			System.out.println("re");
 			m.addAttribute("productpage", true);
@@ -98,7 +98,7 @@ public class ProductController {
 				m.addAttribute("title", "GiftGalore-Product");
 				m.addAttribute("catlist", catagorydao.ViewAllCategory());
 				m.addAttribute("prodlist", productdao.SelectAllProduct());
-				m.addAttribute("Product", new Product());
+				m.addAttribute("Product", new MyProduct());
 				m.addAttribute("edit", false);
 			} else {
 				m.addAttribute("productpage", true);
@@ -139,7 +139,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("/admin/updateproduct")
-	public String editproduct(@Valid @ModelAttribute("Product") Product product, BindingResult BR, Model m) {
+	public String editproduct(@Valid @ModelAttribute("Product") MyProduct product, BindingResult BR, Model m) {
 		if (BR.hasErrors()) {
 			System.out.println("1");
 			m.addAttribute("productpage", true);
@@ -157,7 +157,7 @@ public class ProductController {
 				addimage(product.getPimage(), product.getProduct_id());
 				m.addAttribute("productpage", true);
 				m.addAttribute("title", "GiftGalore-Product");
-				m.addAttribute("Product", new Product());
+				m.addAttribute("Product", new MyProduct());
 				m.addAttribute("catlist", catagorydao.ViewAllCategory());
 				m.addAttribute("prodlist", productdao.SelectAllProduct());
 				m.addAttribute("edit", false);

@@ -1,3 +1,7 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="CR"
+	value="${pageContext.request.contextPath}/resources/pimages" />
+<c:set var="contextroot" value="${pageContext.request.contextPath}"></c:set>
 <link
 	href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
 	rel="stylesheet">
@@ -5,8 +9,7 @@
 .table>tbody>tr>td, .table>tfoot>tr>td {
 	vertical-align: middle;
 }
-
-@media screen and (max-width: 600px) {
+	@media screen and (max-width: 600px) {
 	table#cart tbody td .form-control {
 		width: 20%;
 		display: inline !important;
@@ -45,63 +48,75 @@
 	table#cart tfoot td .btn {
 		display: block;
 	}
-}
+	.img-responsive {
+		height: 100px;
+		width: 100px;
+	}
+	}
 </style>
 
 <div class="container">
-	<table id="cart" class="table table-hover table-condensed">
-		<thead>
-			<tr>
-				<th style="width: 50%">Product</th>
-				<th style="width: 10%">Price</th>
-				<th style="width: 8%">Quantity</th>
-				<th style="width: 22%" class="text-center">Subtotal</th>
-				<th style="width: 10%"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td data-th="Product">
-					<div class="row">
-						<div class="col-sm-2 hidden-xs">
-							<img src="http://placehold.it/100x100" alt="..."
-								class="img-responsive" />
-						</div>
-						<div class="col-sm-10">
-							<h4 class="nomargin">Product 1</h4>
-							<p>Quis aute iure reprehenderit in voluptate velit esse
-								cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit
-								amet.</p>
-						</div>
-					</div>
-				</td>
-				<td data-th="Price">$1.99</td>
-				<td data-th="Quantity"><input type="number"
-					class="form-control text-center" value="1"></td>
-				<td data-th="Subtotal" class="text-center">1.99</td>
-				<td class="actions" data-th="">
-					<button class="btn btn-info btn-sm">
-						<i class="fa fa-refresh"></i>
-					</button>
-					<button class="btn btn-danger btn-sm">
-						<i class="fa fa-trash-o"></i>
-					</button>
-				</td>
-			</tr>
-		</tbody>
-		<tfoot>
-			<tr class="visible-xs">
-				<td class="text-center"><strong>Total 1.99</strong></td>
-			</tr>
-			<tr>
-				<td><a href="#" class="btn btn-warning"><i
-						class="fa fa-angle-left"></i> Continue Shopping</a></td>
-				<td colspan="2" class="hidden-xs"></td>
-				<td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
-				<td><a href="#" class="btn btn-success btn-block">Checkout
-						<i class="fa fa-angle-right"></i>
-				</a></td>
-			</tr>
-		</tfoot>
-	</table>
+	<c:if test="${empty(cartlist)}">
+		<h2 class="jumbotron">Cart Is Empty</h2>
+		<a href="${contextroot}/AllProduct" class="btn button"><i
+			class="fa fa-angle-left"></i> Continue Shopping</a>
+	</c:if>
+	<c:if test="${!empty(cartlist)}">
+		<table id="cart" class="table table-hover table-condensed">
+			<thead>
+				<tr>
+					<th style="width: 40%">Product</th>
+					<th style="width: 8%">Price</th>
+					<th style="width: 22%">Quantity</th>
+					<th style="width: 20%" class="text-center">Subtotal</th>
+					<th style="width: 10%"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${cartlist}" var="l">
+					<tr>
+						<td data-th="Product">
+							<div class="row">
+								<div class="col-sm-4 hidden-xs">
+									<img src="${CR}/${l.pid}.jpg" alt="..."
+										class="img-responsive" />
+								</div>
+								<div class="col-sm-8">
+									<h4 class="nomargin" style="padding-top: 50px;">${l.product_Name}</h4>
+								</div>
+							</div>
+						</td>
+						<td data-th="Price">${l.price}</td>
+						<td data-th="Quantity">
+						<a href="decqty?itemid=${l.itemid}" class="btn btn-info btn-sm">
+								-
+							</a>
+						<input type="text"
+						 name="itemqty" value="${l.quantity}" style="width: 35px;"/>
+								<a href="incqty?itemid=${l.itemid}" class="btn btn-info btn-sm">
+								+
+							</a></td>
+						<td data-th="Subtotal" class="text-center">${l.total}</td>
+						<td class="actions" data-th="">
+							<a href="deleteitem?itemid=${l.itemid}" class="btn btn-danger btn-sm">
+								<i class="fa fa-trash-o"></i>
+							</a>
+						</td>
+					</tr>
+					</c:forEach>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td><a href="${contextroot}/AllProduct" class="btn btn-warning"><i
+							class="fa fa-angle-left"></i> Continue Shopping</a></td>
+					<td/>
+					<td/>
+					<td/>
+					<td><a href="${contextroot}/user/SelectAddress" class="btn btn-success btn-block">Checkout
+							<i class="fa fa-angle-right"></i>
+					</a></td>					
+				</tr>
+			</tfoot>
+		</table>
+	</c:if>
 </div>

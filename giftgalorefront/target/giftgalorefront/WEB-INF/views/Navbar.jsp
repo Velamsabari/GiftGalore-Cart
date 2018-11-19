@@ -42,7 +42,10 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href=""><span class="glyphicon glyphicon-user"></span>Welcome!! ${sessionScope.username}</a></li>
-						<li><a href=""><span class="glyphicon">&#xe116;</span></a></li>
+						<li><a href="${contextroot}/user/viewCart"><span class="glyphicon">&#xe116;</span></a></li>
+						<li><a href="${contextroot}/user/viewOrders"><span class="glyphicon glyphicon-list-alt"></span>
+								ViewOrders </a></li>
+
 						<li><a href="${contextroot}/logout"><span class="glyphicon glyphicon-log-out"></span>
 								Logout </a></li>
 					</ul>

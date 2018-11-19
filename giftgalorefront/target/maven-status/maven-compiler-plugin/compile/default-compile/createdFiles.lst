@@ -1,5 +1,8 @@
-com\giftgalore\giftgalorefront\Controller\CategoryController.class
 com\giftgalore\giftgalorefront\Controller\HomeController.class
 com\giftgalore\giftgalorefront\Controller\LoginController.class
+com\giftgalore\giftgalorefront\Controller\CartController.class
+com\giftgalore\giftgalorefront\Controller\CategoryController.class
 com\giftgalore\giftgalorefront\Controller\UserController.class
 com\giftgalore\giftgalorefront\Controller\ProductController.class
+com\giftgalore\giftgalorefront\Controller\OrderController.class
+com\giftgalore\giftgalorefront\Controller\AddressController.class

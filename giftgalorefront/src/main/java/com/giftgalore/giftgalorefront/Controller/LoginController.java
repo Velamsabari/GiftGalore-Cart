@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.giftgalore.giftgalorebackend.DALayer.CartDAO;
 import com.giftgalore.giftgalorebackend.DALayer.ProductDAO;
 import com.giftgalore.giftgalorebackend.DALayer.UserDAO;
-import com.giftgalore.giftgalorebackend.model.Cart;
-import com.giftgalore.giftgalorebackend.model.Product;
 import com.giftgalore.giftgalorebackend.model.UserDetails;
 
 @Controller

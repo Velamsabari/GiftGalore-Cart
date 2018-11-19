@@ -161,6 +161,7 @@ transform
 					</div>
 				</article>
 			</aside>
+			<c:if test="${prod.quantity != 0}">
 			<aside class="col-sm-3">
 				<div class="row" style="padding-top: 50%;">
 					<a href="addToCart?pid=${prod.product_id}"
@@ -169,6 +170,16 @@ transform
 					</a>
 				</div>
 			</aside>
+			</c:if>
+			<c:if test="${prod.quantity == 0}">
+			<aside class="col-sm-3">
+				<div class="row" style="padding-top: 50%;">
+					<a href=""
+						class="btn btn-lg color-box-waanbii" type="button">  Out of Stock
+					</a>
+				</div>
+			</aside>
+			</c:if>
 		</div>
 	</div>
 </div>
