@@ -1,11 +1,14 @@
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\model\UserDetails.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\DALayer\CartDAOImpl.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\model\Address.java
+E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\DALayer\OrderDAO.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\DALayer\UserDAOImpl.java
+E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\model\MyOrder.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\App.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\model\Product.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\DALayer\CartDAO.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\model\UserCred.java
+E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\DALayer\OrderDAOImpl.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\model\Cart.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\DALayer\AddressDAO.java
 E:\giftgalorebackend\src\main\java\com\giftgalore\giftgalorebackend\DALayer\UserDAO.java

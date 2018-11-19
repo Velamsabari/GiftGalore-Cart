@@ -12,6 +12,7 @@ public interface CartDAO {
 	boolean UpdateCart(Cart cart);
 	boolean DeleteCart(int id);
 	List<Cart> ViewCart(int cartid);
+	Cart Showitem(int itemid);
 }
 
 

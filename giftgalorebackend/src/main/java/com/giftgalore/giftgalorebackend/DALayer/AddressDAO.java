@@ -10,7 +10,7 @@ public interface AddressDAO {
 
 	boolean CreateAddress(Address address);
 	boolean UpdateAddress(Address address);
-	boolean DeleteAddress(Address address);
+	boolean DeleteAddress(int id);
 	Address SelectoneAddress(int addressid);
 	List<Address> SelectallAddress(int cartid);
 

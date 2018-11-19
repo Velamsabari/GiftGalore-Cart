@@ -1,4 +1,7 @@
 package com.giftgalore.giftgalorebackend.model;
+
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,14 +11,22 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 @Entity
-public class Cart {
-
+public class MyOrder {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int itemid;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	int id;
+
+	@Column
+	private String orderid;
 
 	@Column(nullable = false)
 	private int cartid;
+	
+	@Column(nullable = false)
+	private int addid;
+	
+	@Column(nullable = false)
+	private Date odate;
 
 	@Column(nullable = false)
 	private int pid;
@@ -24,22 +35,27 @@ public class Cart {
 	private String product_Name;
 
 	@Column(nullable = false)
-	@Min(value=1)
-	@Max(value=3)
 	private int quantity;
 
 	@Column(nullable = false)
 	private int price;
 
-	@Column(nullable = false)
-	private int total;
+	
 
-	public int getItemid() {
-		return itemid;
+	public int getId() {
+		return id;
 	}
 
-	public void setItemid(int itemid) {
-		this.itemid = itemid;
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getOrderid() {
+		return orderid;
+	}
+
+	public void setOrderid(String orderid) {
+		this.orderid = orderid;
 	}
 
 	public int getCartid() {
@@ -48,6 +64,22 @@ public class Cart {
 
 	public void setCartid(int cartid) {
 		this.cartid = cartid;
+	}
+
+	public int getAddid() {
+		return addid;
+	}
+
+	public void setAddid(int addid) {
+		this.addid = addid;
+	}
+
+	public Date getOdate() {
+		return odate;
+	}
+
+	public void setOdate(Date odate) {
+		this.odate = odate;
 	}
 
 	public int getPid() {
@@ -81,15 +113,6 @@ public class Cart {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
-	public int getTotal() {
-		return total;
-	}
-
-	public void setTotal(int total) {
-		this.total = total;
-	}
 	
 	
-
 }

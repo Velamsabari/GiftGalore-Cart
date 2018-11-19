@@ -1,4 +1,6 @@
+com\giftgalore\giftgalorebackend\DALayer\OrderDAO.class
 com\giftgalore\giftgalorebackend\DALayer\CategoryDAO.class
+com\giftgalore\giftgalorebackend\DALayer\OrderDAOImpl.class
 com\giftgalore\giftgalorebackend\DALayer\AddressDAO.class
 com\giftgalore\giftgalorebackend\DALayer\ProductDAOImpl.class
 com\giftgalore\giftgalorebackend\DALayer\UserDAOImpl.class
@@ -6,6 +8,7 @@ com\giftgalore\giftgalorebackend\model\Product.class
 com\giftgalore\giftgalorebackend\model\Address.class
 com\giftgalore\giftgalorebackend\App.class
 com\giftgalore\giftgalorebackend\DALayer\AddressDAOImpl.class
+com\giftgalore\giftgalorebackend\model\MyOrder.class
 com\giftgalore\giftgalorebackend\model\Category.class
 com\giftgalore\giftgalorebackend\DALayer\CategoryDAOImpl.class
 com\giftgalore\giftgalorebackend\DALayer\UserDAO.class

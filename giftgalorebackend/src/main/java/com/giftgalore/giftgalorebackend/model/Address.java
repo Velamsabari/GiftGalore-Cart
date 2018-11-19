@@ -15,6 +15,36 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int addressid;
 
+	@Column(nullable = false)
+	private int cartid;
+	
+	@Column(nullable = false)
+	@NotBlank(message = "Name is mandatory")
+	private String name;
+
+	@Column(nullable = false)
+	@NotBlank(message = "Address line 1 is mandatory")
+	private String addline1;
+
+	@Column(nullable = false)
+	@NotBlank(message = "Address line 2 is mandatory")
+	private String addline2;
+
+	@Column(nullable = false)
+	@NotBlank(message = "City name is mandatory")
+	private String city;
+
+	@Column(nullable = false)
+	@NotBlank(message = "State name is mandatory")
+	private String state;
+
+	@Column(nullable = false)
+	@NotBlank(message = "Country is mandatory")
+	private String country;
+
+	@NotBlank(message = "pincode is mandatory")
+	private String pincode;
+
 	public int getAddressid() {
 		return addressid;
 	}
@@ -29,6 +59,14 @@ public class Address {
 
 	public void setCartid(int cartid) {
 		this.cartid = cartid;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getAddline1() {
@@ -78,31 +116,8 @@ public class Address {
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
-
-	@Column(nullable = false)
-	private int cartid;
-
-	@Column(nullable = false)
-	@NotBlank(message = "Address line 1 is mandatory")
-	private String addline1;
-
-	@Column(nullable = false)
-	private String addline2;
-
-	@Column(nullable = false)
-	@NotBlank(message = "City name is mandatory")
-	private String city;
-
-	@Column(nullable = false)
-	@NotBlank(message = "State name is mandatory")
-	private String state;
-
-	@Column(nullable = false)
-	@NotBlank(message = "Country is mandatory")
-	private String country;
-
-	@NotBlank(message = "pincode is mandatory")
-	private String pincode;
+	
+	
 
 }
 

@@ -41,10 +41,10 @@ public class AddressDAOImpl implements AddressDAO {
 
 	}
 
-	public boolean DeleteAddress(Address address) {
+	public boolean DeleteAddress(int id) {
 		try {
 
-			sessionfactory.getCurrentSession().delete(address);
+			sessionfactory.getCurrentSession().delete(SelectoneAddress(id));
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -54,10 +54,11 @@ public class AddressDAOImpl implements AddressDAO {
 
 	public List<Address> SelectallAddress(int cartid) {
 		try {
-			return sessionfactory.getCurrentSession().createQuery("from Address where cartid" + cartid).list();
+			return sessionfactory.getCurrentSession().createQuery("from Address where cartid=" + cartid).list();
 		}
 
 		catch (Exception e) {
+			System.out.println(e.getMessage());
 			return null;
 
 		}
@@ -66,7 +67,7 @@ public class AddressDAOImpl implements AddressDAO {
 	public Address SelectoneAddress(int addressid) {
 		try {
 			System.out.println("2");
-			return (Address) sessionfactory.getCurrentSession().createQuery("from Address where addressid" + addressid)
+			return (Address) sessionfactory.getCurrentSession().createQuery("from Address where addressid=" + addressid)
 					.uniqueResult();
 		}
 

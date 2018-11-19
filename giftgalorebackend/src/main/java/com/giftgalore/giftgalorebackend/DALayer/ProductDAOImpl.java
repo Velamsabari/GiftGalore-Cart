@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.giftgalore.giftgalorebackend.model.Category;
-import com.giftgalore.giftgalorebackend.model.Product;
+import com.giftgalore.giftgalorebackend.model.MyProduct;
 
 
 @Repository
@@ -18,7 +18,7 @@ public class ProductDAOImpl implements ProductDAO {
 		@Autowired
 		SessionFactory sessionfactory;
 
-		public boolean CreateProduct(Product product) {
+		public boolean CreateProduct(MyProduct product) {
 			try
 			{
 				sessionfactory.getCurrentSession().save(product);
@@ -31,7 +31,7 @@ public class ProductDAOImpl implements ProductDAO {
 			
 		}
 
-		public boolean UpdateProduct(Product product) {
+		public boolean UpdateProduct(MyProduct product) {
 			try
 			{
 				sessionfactory.getCurrentSession().update(product);
@@ -44,7 +44,7 @@ public class ProductDAOImpl implements ProductDAO {
 			
 		}
 
-		public boolean DeleteProduct(Product product) {
+		public boolean DeleteProduct(MyProduct product) {
 			try
 			{
 				sessionfactory.getCurrentSession().delete(product);
@@ -55,11 +55,11 @@ public class ProductDAOImpl implements ProductDAO {
 			}
 		}
 
-		public Product SelectProduct(int Product_id) {
+		public MyProduct SelectProduct(int Product_id) {
 			try {
 				System.out.println("df");
-				return (Product) sessionfactory.getCurrentSession()
-						.createQuery("from Product where product_id='"+Product_id+"'").uniqueResult();
+				return (MyProduct) sessionfactory.getCurrentSession()
+						.createQuery("from MyProduct where product_id='"+Product_id+"'").uniqueResult();
 			}
 
 			catch (Exception e) {
@@ -69,11 +69,11 @@ public class ProductDAOImpl implements ProductDAO {
 			
 		}
 
-		public List<Product> SelectAllProduct() {
+		public List<MyProduct> SelectAllProduct() {
 			try {
 				
 				return sessionfactory.getCurrentSession()
-						.createQuery("from Product").list();
+						.createQuery("from MyProduct").list();
 			}
 
 			catch (Exception e) {
@@ -83,12 +83,12 @@ public class ProductDAOImpl implements ProductDAO {
 			
 		}
 
-		public List<Product> SelectCatProduct(String Category_Name) 
+		public List<MyProduct> SelectCatProduct(String Category_Name) 
 		{
 			try {
 				Category C=	(Category)sessionfactory.getCurrentSession().createQuery("from Category where Category_Name='"+Category_Name+"'").uniqueResult();
 				return sessionfactory.getCurrentSession()
-						.createQuery("from Product where Category_category_id="+C.getCategory_id()).list();
+						.createQuery("from MyProduct where Category_category_id="+C.getCategory_id()).list();
 			}
 
 			catch (Exception e) {

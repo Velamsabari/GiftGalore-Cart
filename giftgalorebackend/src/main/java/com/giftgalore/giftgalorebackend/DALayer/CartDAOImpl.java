@@ -64,4 +64,15 @@ public class CartDAOImpl implements CartDAO {
 			return new ArrayList<Cart>();
 		}	}
 
+	public Cart Showitem(int itemid) 
+	{
+		try
+		{
+		Cart cart=(Cart)sessionfactory.getCurrentSession().createQuery("from Cart where itemid="+itemid).uniqueResult();
+		return cart;
+		}
+		catch (Exception e) {
+			return null; 		}
+	}
+
 }
